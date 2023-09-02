@@ -1,6 +1,11 @@
+import Layout from './components/Layout/Layout';
+import RoutesComponent from './routes';
+
 function App() {
   return (
-    <h1>App</h1>    
+    <Layout>
+      <RoutesComponent />
+    </Layout>      
   );
 }
 
