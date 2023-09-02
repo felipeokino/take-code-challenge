@@ -37,3 +37,5 @@ export const icons = {
   logo: Logo,
   arrowDown: ArrowDown
 };
+
+export type IconType = keyof typeof icons;
