@@ -1,18 +1,14 @@
 import { ReactNode } from 'react';
 
+import { TableBodyContainer } from './styles';
+
 type TableBodyProps = {
   children: ReactNode,
-  label?: string
 }
-export default function TableBody({ children, label }: TableBodyProps) {
+export default function TableBody({ children }: TableBodyProps) {
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1rem'
-    }}>
-      <span>{label}</span>
+    <TableBodyContainer>
       {children}
-    </div>
+    </TableBodyContainer>
   );
 }

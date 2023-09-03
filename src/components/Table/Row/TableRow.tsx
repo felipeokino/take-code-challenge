@@ -1,6 +1,6 @@
 import { HTMLAttributes,ReactNode } from 'react';
 
-import { Container } from './styles';
+import { TableRowContainer } from './styles';
 
 type TableRowProps = Partial<HTMLAttributes<HTMLDivElement>> & {
   children: ReactNode,
@@ -9,6 +9,6 @@ type TableRowProps = Partial<HTMLAttributes<HTMLDivElement>> & {
 
 export default function TableRow({ children, ...props }: TableRowProps) {
   return (
-    <Container {...props}>{children}</Container>
+    <TableRowContainer {...props}>{children}</TableRowContainer>
   );
 }

@@ -1,3 +1,4 @@
+import { TableRootContainer } from './styles';
 
 interface TableRootProps {
   children: React.ReactNode
@@ -5,8 +6,8 @@ interface TableRootProps {
 
 export default function TableRoot({ children }: TableRootProps) {
   return (
-    <div style={{ backgroundColor: '#FFF' }}>
+    <TableRootContainer>
       {children}
-    </div>
+    </TableRootContainer>
   );
 }

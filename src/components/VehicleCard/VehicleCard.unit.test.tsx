@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { expect,test } from 'vitest';
 
 import { VehicleProps } from '../../types/types.common';
-import { formatCurrency } from '../../utils/format';
+import { formatCurrency, formatMileage } from '../../utils/format';
 
 import VehicleCard from '.';
 
@@ -38,7 +38,7 @@ test('should can generate vehicle card', async () => {
   const yearInfo = await screen.findByText(`${mockVehicle.manufacturing_year}/${mockVehicle.model_year} ${mockVehicle.fuel_type}`);
   expect(yearInfo).toBeDefined();
 
-  const mileage = await screen.findByText(`${mockVehicle.mileage}`);
+  const mileage = await screen.findByText(`${formatMileage(mockVehicle.mileage)}`);
   expect(mileage).toBeDefined();
 
   const price = await screen.findByText(`${formatCurrency(mockVehicle.ad_selling_price)}`);

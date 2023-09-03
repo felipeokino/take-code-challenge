@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const TableRowContainer = styled.div`
     width: 100%;
     font-size: 14px;
     margin: 10px 0 0;
