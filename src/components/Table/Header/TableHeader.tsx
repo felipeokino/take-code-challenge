@@ -9,9 +9,11 @@ import { Header, Title } from './styles';
 type TableHeaderProps = {
   label: string
   setFilter: React.Dispatch<SetStateAction<string>>
+  onAdd: () => void
+  onAddFilter: () => void
 }
 
-export default function TableHeader({ label, setFilter }: TableHeaderProps) {
+export default function TableHeader({ label, setFilter, onAdd, onAddFilter }: TableHeaderProps) {
   return (
     <Header>
       <div>
@@ -19,8 +21,8 @@ export default function TableHeader({ label, setFilter }: TableHeaderProps) {
         <Input handleSearch={setFilter} />
       </div>
       <div>
-        <Button label='Filtrar' variant='text' icon={icons.filter} />
-        <Button label='Adicinonar' variant='filled' icon={icons.plus} />
+        <Button label='Filtrar' variant='text' icon={icons.filter} onClick={onAddFilter} />
+        <Button label='Adicionar' variant='filled' icon={icons.plus} onClick={onAdd} />
       </div>
     </Header>
   );
