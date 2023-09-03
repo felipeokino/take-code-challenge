@@ -1,12 +1,16 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Loader from '../../components/Loader';
+import Pagination from '../../components/Pagination';
 import { Table } from '../../components/Table';
 import VehicleCard from '../../components/VehicleCard';
 import useVehicles from '../../utils/useVehicles';
 
+const INITIAL_PAGE = 1;
 export default function Vehicles() {
-  const { vehicles, setFilter, loading } = useVehicles();
+  const [ page, setPage ] = useState(INITIAL_PAGE);
+  const { vehicles, setFilter, loading, lastPage } = useVehicles(page);
   const navigate = useNavigate();
 
   const handleCLick = (id: string) => {
@@ -38,6 +42,9 @@ export default function Vehicles() {
           ))
         }
       </Table.Body>
+      <Table.Footer>
+        <Pagination currentPage={page} count={lastPage} setPage={setPage} />
+      </Table.Footer>
     </Table.Root>
   );
 }
