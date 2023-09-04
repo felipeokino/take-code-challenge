@@ -1,6 +1,5 @@
 import { SetStateAction } from 'react';
 
-import { icons } from '../../../utils/icons';
 import Button from '../../Button';
 import Input from '../../Input';
 
@@ -21,8 +20,8 @@ export default function TableHeader({ label, setFilter, onAdd, onAddFilter }: Ta
         <Input handleSearch={setFilter} />
       </div>
       <div>
-        <Button label='Filtrar' variant='text' icon={icons.filter} onClick={onAddFilter} />
-        <Button label='Adicionar' variant='filled' icon={icons.plus} onClick={onAdd} />
+        <Button label='Filtrar' variant='text' icon='filter' />
+        <Button label='Adicinonar' variant='filled' icon='plus' />
       </div>
     </Header>
   );

@@ -1,6 +1,6 @@
 import { InputHTMLAttributes, SetStateAction, useRef } from 'react';
 
-import { icons } from '../../utils/icons';
+import Icon from '../Icon';
 
 import { InputContainer, StyledInput } from './styles';
 
@@ -24,9 +24,7 @@ export default function Input({ handleSearch }: InputProps) {
   return (
     <InputContainer>
       <StyledInput placeholder='Buscar...' ref={inputRef} onKeyUp={handleKeyUp}/>
-      <button onClick={handleClick}>
-        <img src={icons.search} />
-      </button>
+      <Icon icon='search' isButton onClick={handleClick} />
     </InputContainer>
   );
 }
