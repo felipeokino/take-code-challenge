@@ -16,7 +16,7 @@ Clone the project
 Go to the project directory  
 
 ~~~bash  
-  cd my-project
+  cd take-code-challenge
 ~~~
 
 Install dependencies  
