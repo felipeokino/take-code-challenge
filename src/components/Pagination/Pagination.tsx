@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { generatePaginationList } from '../../utils';
 import Icon from '../Icon';
 
-import { PaginationContainer, PaginationItem } from './styles';
+import { PaginationContainer, PaginationItem } from './Pagination.styles';
 
 type PaginationProps = {
     count: number

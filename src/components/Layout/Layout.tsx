@@ -5,8 +5,8 @@ import { icons } from '../../utils/icons';
 import Header from '../Header';
 import { SideBar } from '../Sidebar';
 
+import { CollapseSideBar, PageContent } from './Layout.styles';
 import { items } from './sidebarItems';
-import { CollapseSideBar, PageContent } from './styles';
 
 type LayoutProps = {
     children: ReactNode
@@ -26,7 +26,7 @@ export default function Layout({ children }: LayoutProps){
         {
           items.map(({ label, path, icon }) => (
             <SideBar.Item key={label} label={label} path={path} icon={icon} active={!!matchPath(
-              location.pathname, 
+              location.pathname.split('/')[1], 
               path
             )} />
           ))

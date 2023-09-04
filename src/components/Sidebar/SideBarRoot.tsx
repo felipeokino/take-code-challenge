@@ -1,4 +1,4 @@
-import { Container } from './styles';
+import { Container } from './Sidebar.styles';
 
 type SideBarRootProps = {
     children: React.ReactNode

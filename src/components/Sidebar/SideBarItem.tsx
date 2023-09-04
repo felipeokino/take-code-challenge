@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import { SideBarItem as StyledItem } from './styles';
+import { SideBarItem as StyledItem } from './Sidebar.styles';
 
 
 type SideBarItemProps = {

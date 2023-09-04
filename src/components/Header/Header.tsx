@@ -8,7 +8,7 @@ import Notification from '../Notification';
 import Profile from '../Profile';
 import Select from '../Select';
 
-import { HeaderContainer } from './styles';
+import { HeaderContainer } from './Header.styles';
 
 export default function Header() {
   const nagivate = useNavigate();
@@ -31,7 +31,7 @@ export default function Header() {
         <Icon icon='logo' isButton onClick={() => nagivate('/')} />
         <div>
           <Icon icon='home' isButton={false}/>
-          <Select options={locations} value={selected} onClick={handleSelect}/>
+          <Select options={locations} selectValue={selected} handleClick={handleSelect}/>
         </div>
       </div>
 

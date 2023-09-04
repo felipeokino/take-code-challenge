@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { TableBodyContainer } from './styles';
+import { TableBodyContainer } from './Body.styles';
 
 type TableBodyProps = {
   children: ReactNode,

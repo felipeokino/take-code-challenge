@@ -1,4 +1,4 @@
-import { LoaderContainer, PulseLoader } from './styles';
+import { LoaderContainer, PulseLoader } from './Loader.styles';
 
 export default function Loader() {
   return (

@@ -1,5 +1,6 @@
 import TableBody from './Body/TabeBody';
-import TableFooter from './Footer/Footer';
+import TableCell from './Cell/TableCell';
+import TableFooter from './Footer/TableFooter';
 import TableHeader from './Header/TableHeader';
 import TableRoot from './Root/TableRoot';
 import TableRow from './Row/TableRow';
@@ -9,5 +10,6 @@ export const Table = {
   Header: TableHeader,
   Body: TableBody,
   Row: TableRow,
-  Footer: TableFooter
+  Footer: TableFooter,
+  Cell: TableCell
 };

@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, Fragment } from 'react';
 
 import { icons } from '../../utils/icons';
 
-import { IconButton } from './styles';
+import { IconButton } from './Icon.styles';
 
 type IconProps = {
     icon: keyof typeof icons

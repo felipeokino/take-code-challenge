@@ -1,7 +1,7 @@
 
 import Icon from '../Icon';
 
-import { ProfileIcon } from './styles';
+import { ProfileIcon } from './Profile.styles';
 
 export default function Profile() {
   return (

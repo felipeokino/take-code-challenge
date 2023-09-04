@@ -1,7 +1,7 @@
 import { VehicleProps } from '../../types/types.common';
 import { formatCurrency, formatMileage } from '../../utils/format.ts';
 
-import { CardInfo,CardTitle, Container, Thumbnail, VehiclePrice } from './styles.ts';
+import { CardInfo,CardTitle, Container, Thumbnail, VehiclePrice } from './VehicleCard.styles.ts';
 
 type VehicleCardProps = {
   vehicle: VehicleProps
