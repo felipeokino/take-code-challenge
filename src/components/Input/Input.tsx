@@ -1,30 +1,34 @@
 import { InputHTMLAttributes, SetStateAction, useRef } from 'react';
 
+import { IconType } from '../../utils/icons';
 import Icon from '../Icon';
 
-import { InputContainer, StyledInput } from './styles';
+import { InputContainer, StyledInput } from './Input.styles';
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
-    handleSearch: React.Dispatch<SetStateAction<string>>
+  handleClick?: React.Dispatch<SetStateAction<string>> | ((args1: string) => void)
+    label?: string
+    icon?: IconType
 };
 
-export default function Input({ handleSearch }: InputProps) {
+export default function Input({ handleClick, label, icon, ...props }: InputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleClick = () => {
+  const InternHandleClick = () => {
     const value = inputRef.current?.value ?? '';
-    
-    handleSearch(value);
+    if (handleClick)
+      handleClick(value);
   };
 
   const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') handleClick();
+    if (event.key === 'Enter') InternHandleClick();
   };
 
   return (
     <InputContainer>
-      <StyledInput placeholder='Buscar...' ref={inputRef} onKeyUp={handleKeyUp}/>
-      <Icon icon='search' isButton onClick={handleClick} />
+      {label && <span className="label">{label}</span>}
+      <StyledInput {...props} ref={inputRef} onKeyUp={handleKeyUp}/>
+      {icon && <Icon icon={icon} isButton={!!handleClick} onClick={InternHandleClick} />}
     </InputContainer>
   );
 }

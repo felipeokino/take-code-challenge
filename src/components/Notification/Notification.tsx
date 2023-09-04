@@ -1,7 +1,7 @@
 import useNotifications from '../../utils/useNotifications';
 import Icon from '../Icon';
 
-import { NotificationBadge, NotificationContainer } from './styles';
+import { NotificationBadge, NotificationContainer } from './Notification.styles';
 
 export default function Notification() {
   const { notifications } = useNotifications();

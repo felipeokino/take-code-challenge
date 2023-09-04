@@ -5,5 +5,7 @@ export const IconButton = styled.button`
     outline: none;
     cursor: pointer;
     background-color: #FFFFFF;
-
+    color: #000;
+    display: flex;
+    align-items: center;
 `;

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { Footer } from './styles';
+import { Footer } from './TableFooter.styles';
 
 type TableFooterProps = {
     children: ReactNode

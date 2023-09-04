@@ -11,11 +11,7 @@ const INITIAL_PAGE = 1;
 export default function Vehicles() {
   const [ page, setPage ] = useState(INITIAL_PAGE);
   const { vehicles, setFilter, loading, lastPage } = useVehicles(page);
-  const navigate = useNavigate();
 
-  const handleCLick = (id: string) => {
-    navigate(id);
-  };
 
   if (loading) {
     return <Loader />;
@@ -26,18 +22,18 @@ export default function Vehicles() {
       <Table.Header label='Veículos' setFilter={setFilter}/>
       <Table.Body>
         <Table.Row>
-          <span>Dados do veículo</span>
-          <span>REF</span>
-          <span>Placa</span>
-          <span>Data</span>
+          <Table.Cell>Dados do veículo</Table.Cell>
+          <Table.Cell>REF</Table.Cell>
+          <Table.Cell>Placa</Table.Cell>
+          <Table.Cell>Data</Table.Cell>
         </Table.Row>
         {
           vehicles.map(vehicle => (
-            <Table.Row key={vehicle.vehicle_uuid} onClick={() => handleCLick(vehicle.vehicle_uuid)}>
+            <Table.Row key={vehicle.vehicle_uuid}>
               <VehicleCard vehicle={vehicle}/>
-              <span>{vehicle.reference}</span>
-              <span>{vehicle.plate}</span>
-              <span>24/07/2022</span>
+              <Table.Cell>{vehicle.reference}</Table.Cell>
+              <Table.Cell>{vehicle.plate}</Table.Cell>
+              <Table.Cell>24/07/2022</Table.Cell>
             </Table.Row>
           ))
         }

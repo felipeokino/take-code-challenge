@@ -1,16 +1,18 @@
-import { MouseEvent, useState } from 'react';
+import { MouseEvent, SelectHTMLAttributes, useState } from 'react';
 
 import { SelectOptionProps } from '../../types/types.common';
 import Icon from '../Icon';
 
-import { OpenButton, Option, SelectContainer, SelectOptions } from './styles';
+import { OpenButton, Option, SelectContainer, SelectOptions } from './Select.styles';
 
-type SelectProps = {
+type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
     options: SelectOptionProps[],
-    value: SelectOptionProps | null,
-    onClick: (args1: SelectOptionProps) => void
+    selectValue: SelectOptionProps | null,
+    handleClick: (args1: SelectOptionProps) => void
+    bordered?: boolean
+    label?: string
 }
-export default function Select({ options, onClick, value }: SelectProps) {
+export default function Select({ options, handleClick: onClick, selectValue, bordered, label, style = {} }: SelectProps) {
   const [ isOpen, setIsOpen ] = useState(false);
     
   const handleClick = (event: MouseEvent<HTMLSpanElement>) => {
@@ -21,10 +23,10 @@ export default function Select({ options, onClick, value }: SelectProps) {
 
   const handleOpen = () => setIsOpen(!isOpen);
 
-  console.log(value);
   return (
-    <SelectContainer onClick={handleOpen}>
-      {value && <span>{value?.label}</span>}
+    <SelectContainer bordered={bordered} onClick={handleOpen} style={style}>
+      {label && <span className='label'>{label}</span>}
+      {selectValue && <span>{selectValue?.label}</span>}
       {isOpen && <SelectOptions isOpen={isOpen} count={options.length}>
         {
           options.map(opt => <Option key={opt.value} id={JSON.stringify(opt)} onClick={handleClick}>{opt.label}</Option>)

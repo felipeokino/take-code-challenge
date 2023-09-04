@@ -13,7 +13,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 export default function Button({ label, icon, variant, ...props }: ButtonProps) {
   return (
-    <StyledButton variant={variant}>
+    <StyledButton variant={variant} {...props}>
       {icon && <Icon icon={icon} isButton={false} />}
       {label && <span>{label}</span>}
     </StyledButton>

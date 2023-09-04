@@ -1,4 +1,4 @@
-import { TableRootContainer } from './styles';
+import { TableRootContainer } from './TableRoot.styles';
 
 interface TableRootProps {
   children: React.ReactNode
