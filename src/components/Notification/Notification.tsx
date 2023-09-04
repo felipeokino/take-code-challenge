@@ -9,7 +9,7 @@ export default function Notification() {
   return (
     <NotificationContainer>
       <Icon icon='notification' isButton />
-      <NotificationBadge>
+      <NotificationBadge data-testid='notification-badge'>
         {notifications.length}
       </NotificationBadge>
     </NotificationContainer> 

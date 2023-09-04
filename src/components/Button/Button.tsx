@@ -11,7 +11,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     variant: 'text' | 'filled'
 }
 
-export default function Button({ label, icon, variant }: ButtonProps) {
+export default function Button({ label, icon, variant, ...props }: ButtonProps) {
   return (
     <StyledButton variant={variant}>
       {icon && <Icon icon={icon} isButton={false} />}

@@ -26,8 +26,8 @@ export const Container = styled.nav<ContainerProps>`
     opacity: 1;
 
     z-index: 1;
-    * {
-        transition: all 0.3s ease-in-out;
+    span {
+        transition: opacity 0.3s ease-in-out;
     }
     ${props => !props.isCollapsed && css`
         width: 89px;

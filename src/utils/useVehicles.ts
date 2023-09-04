@@ -1,13 +1,15 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useCallback, useEffect, useState } from 'react';
 
 import { VehicleProps } from '../types/types.common';
 
 
-const useVehicles = () => {
+const useVehicles = (currentPage: number) => {
   const [ vehicles, setVehicles ] = useState<VehicleProps[]>([]);
   const [ refetch, setRefecth ] = useState(true);
   const [ filter, setFilter ] = useState('');
   const [ filteredVehicles, setFilteredVehicles ] = useState<VehicleProps[]>([]);
+  const fakeLastPage = 30;
 
   const fetchVehicles = useCallback(async () => {
     if (refetch) {
@@ -53,7 +55,8 @@ const useVehicles = () => {
     vehicles: filteredVehicles,
     refetch: useRefetch,
     setFilter,
-    loading: refetch
+    loading: refetch,
+    lastPage: fakeLastPage
   };
 };
 

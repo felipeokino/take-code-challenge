@@ -1,5 +1,5 @@
 import { VehicleProps } from '../../types/types.common';
-import { formatCurrency } from '../../utils/format.ts';
+import { formatCurrency, formatMileage } from '../../utils/format.ts';
 
 import { CardInfo,CardTitle, Container, Thumbnail, VehiclePrice } from './styles.ts';
 
@@ -15,7 +15,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
         <CardTitle>{brand_name}&nbsp;{vehicle.model_name}</CardTitle>
         <span>{name}</span>
         <span>{vehicle.manufacturing_year}/{vehicle.model_year} <DotIcon /> {vehicle.fuel_type}</span>
-        <span>{vehicle.mileage} <DotIcon /> <VehiclePrice>{formatCurrency(vehicle.ad_selling_price)}</VehiclePrice></span>
+        <span>{formatMileage(vehicle.mileage)} <DotIcon /> <VehiclePrice>{formatCurrency(vehicle.ad_selling_price)}</VehiclePrice></span>
       </CardInfo>
     </Container>
   );
