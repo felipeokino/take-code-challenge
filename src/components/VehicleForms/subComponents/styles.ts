@@ -4,7 +4,7 @@ type RowProps = {
     justify?: 'between' | 'evenly' | 'around' | 'start' | 'end'
 }
 export const Row = styled.div<RowProps>`
-    width: fit-content;
+    width: 100%;
     gap: 8px;
     display: flex;
     justify-content: space-between;

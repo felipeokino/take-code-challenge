@@ -1,44 +1,42 @@
-import { icons } from '../../utils/icons';
-
 export const items = [
   {
     label: 'Resumo',
     path: '/',
-    icon: icons.resume
+    icon: 'resume'
   },
   {
     label: 'Oportunidades',
     path: '/opportunities',
-    icon: icons.opportunity
+    icon: 'opportunity'
   },
   {
     label: 'Agenda',
     path: '/calendar',
-    icon: icons.calendar
+    icon: 'calendar'
   },
   {
     label: 'Veículos',
     path: '/vehicles',
-    icon: icons.carparts
+    icon: 'carparts'
   },
   {
     label: 'Publicação',
     path: '/publish',
-    icon: icons.publish
+    icon: 'publish'
   },
   {
     label: 'Contatos',
     path: '/contacts',
-    icon: icons.contacts
+    icon: 'contact'
   },
   {
     label: 'Analytics',
     path: '/analytics',
-    icon: icons.analytics
+    icon: 'analytics'
   },
   {
     label: 'Financiamento',
     path: '/finance',
-    icon: icons.finance
+    icon: 'finance'
   },
 ];

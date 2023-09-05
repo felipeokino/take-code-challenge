@@ -1,4 +1,9 @@
-export interface VehicleProps {
+export type IconProps = {
+  fill?: string
+  stroke?: string
+  size?: number
+}
+export type VehicleProps = {
     evaluation_type: string
     version_uuid: string
     mileage: number

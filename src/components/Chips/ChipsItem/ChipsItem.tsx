@@ -11,6 +11,6 @@ type ChipsItemProps = {
 }
 export default function ChipsItem({ children, onDelete }: ChipsItemProps) {
   return (
-    <ChipsItemContainer >{children}<Icon icon='close' isButton onClick={onDelete} /></ChipsItemContainer>
+    <ChipsItemContainer >{children}<Icon color='white' icon='close' isButton onClick={onDelete} /></ChipsItemContainer>
   );
 }

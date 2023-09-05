@@ -1,19 +1,24 @@
 import { ButtonHTMLAttributes, Fragment } from 'react';
 
-import { icons } from '../../utils/icons';
+import { icons, IconType } from '../../utils/icons';
 
 import { IconButton } from './Icon.styles';
 
 type IconProps = {
-    icon: keyof typeof icons
-    isButton: boolean
+  icon: IconType
+  isButton: boolean
+  stroke?: string
+  fill?: string
+  size?: number
 } & Partial<ButtonHTMLAttributes<HTMLButtonElement>>
 
-export default function Icon({ icon, isButton, ...props }: IconProps) {
+export default function Icon({ icon, isButton, stroke, fill, size, ...props }: IconProps) {
   const Element = isButton ? IconButton : Fragment;
+  const IconElement = icons[icon];
+  
   return (
     <Element {...props}>
-      <img src={icons[icon]} />
+      <IconElement stroke={stroke} fill={fill} size={size}/>
     </Element>
   );
 }

@@ -1,5 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
+import { IconType } from '../../utils/icons';
+import Icon from '../Icon';
+
 import { SideBarItem as StyledItem } from './Sidebar.styles';
 
 
@@ -7,7 +10,7 @@ type SideBarItemProps = {
     active?: boolean
     label: string
     path?: string
-    icon?: string
+    icon?: IconType
     childs?: SideBarItemProps[]
 }
 
@@ -18,7 +21,7 @@ export default function SideBarItem({ label, icon, active, path='#' }: SideBarIt
   };
   return (
     <StyledItem isActive={active} onClick={handleClick}>
-      <img src={icon} alt="" />
+      <Icon icon={icon} isButton={false} stroke={active && '$FFFFFF'} />
       <span>{label}</span>
     </StyledItem>
   );

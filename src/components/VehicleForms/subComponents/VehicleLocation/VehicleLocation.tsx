@@ -1,10 +1,11 @@
+import { VehicleType } from '../../../../pages/AddVehicle/mockVehicleData';
 import { SelectOptionProps } from '../../../../types/types.common';
 import Select from '../../../Select';
 import Section from '../Section';
 import { Row } from '../styles';
 
 type VehicleLocationProps = {
-  updateValues: (key: string, field: string, value: unknown) => void
+  updateValues: (key: keyof VehicleType, field: string, value: unknown) => void
   location: {
     state: string
     city: string

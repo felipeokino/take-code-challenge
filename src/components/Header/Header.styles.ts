@@ -12,7 +12,7 @@ export const HeaderContainer = styled.header`
     align-items: center;
     padding: 12px;
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 3;
     background-color: #FFFFFF;
     div {
         display: flex;
