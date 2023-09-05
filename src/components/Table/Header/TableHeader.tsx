@@ -27,7 +27,7 @@ export default function TableHeader({ label, setFilter, onAdd, onAddFilter }: Ta
       </div>
       <div>
         <Button label='Filtrar' variant='text' icon='filter' />
-        <Button label='Adicinonar' variant='filled' icon='plus' onClick={handleClick} />
+        <Button label='Adicionar' variant='filled' icon='plus' onClick={handleClick} />
       </div>
     </Header>
   );

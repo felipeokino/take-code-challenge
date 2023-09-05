@@ -26,7 +26,7 @@ export default function Tags({ addTags, tags }: TagsProps) {
       {addTagIsOpen && <Input handleClick={handleAdd} icon='plus'/>}
       <Row>
 
-        <Button label='+ Adicionar' variant='text' onClick={() => setAddTagIsOpen(true)}/>
+        <Button label='Adicionar' icon='plus' variant='text' onClick={() => setAddTagIsOpen(true)}/>
         {
           tags.map(tag => <TagItem key={tag.value} onDelete={() => handleDelete(tag)}>{tag.label}</TagItem>)
         }

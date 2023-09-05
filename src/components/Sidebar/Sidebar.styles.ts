@@ -25,7 +25,7 @@ export const Container = styled.nav<ContainerProps>`
     transition: width 0.3s ease-in-out;
     opacity: 1;
 
-    z-index: 1;
+    z-index: 2;
     span {
         transition: opacity 0.3s ease-in-out;
     }
@@ -66,15 +66,15 @@ export const SideBarItem = styled.div<SideBarItemProps>`
     
     cursor: pointer;
 
-    img {
-        filter: invert(1);
+    svg {
+        stroke: black !important;
     }
 
     ${props => props.isActive && css`
         background-color: #0065FF;
         color: #FFFFFF;
-        img {
-            filter: invert(0);
+        svg {
+            stroke: #FFFFFF !important;
         }
     `}
 `;

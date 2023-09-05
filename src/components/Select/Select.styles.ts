@@ -4,11 +4,10 @@ type SelectContainerProps = {
     bordered?: boolean
 }
 export const SelectContainer = styled.div<SelectContainerProps>`
-    min-height: 38px;
     min-width: 200px;
-    width: max-content;
+    width: 100%;
     border: 1px solid white;
-    height: 100%;
+    height: 38px;
     position: relative;
     display: flex;
     align-items: center;
@@ -44,7 +43,7 @@ export const SelectOptions = styled.div<SelectOptionProps>`
     flex-direction: column;
     height: auto;
     position: absolute;
-    bottom: ${props => `${props.count * -30}px`};
+    bottom: ${props => `${props.count * -33}px`};
     background: #FFF;
     width:  100%;
     transition: all 0.2s ease-in-out;

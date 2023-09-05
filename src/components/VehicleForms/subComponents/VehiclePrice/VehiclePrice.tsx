@@ -1,5 +1,4 @@
-import { useState } from 'react';
-
+import { VehicleType } from '../../../../pages/AddVehicle/mockVehicleData';
 import { formatCurrency } from '../../../../utils/format';
 import Input from '../../../Input';
 import { Row } from '../styles';
@@ -14,7 +13,7 @@ type VehiclePriceProps = {
     kbbMax: number
     particularValue: number
   }
-  updateValues?: (key: string, field: string, value: unknown) => void
+  updateValues?: (key: keyof VehicleType, field: string, value: unknown) => void
 }
 export default function VehiclePrice({ price:{ kbbMax, kbbMin, maxValue, minValue, particularValue } }: VehiclePriceProps) {
   

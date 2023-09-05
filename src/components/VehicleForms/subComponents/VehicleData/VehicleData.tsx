@@ -1,3 +1,4 @@
+import { VehicleType } from '../../../../pages/AddVehicle/mockVehicleData';
 import { SelectOptionProps } from '../../../../types/types.common';
 import { formatMileage } from '../../../../utils/format';
 import Input from '../../../Input';
@@ -20,7 +21,7 @@ type VehicleDataProps = {
     mileage: number
     color: SelectOptionProps
   }
-  updateValues: (key: string, field: string, value: unknown) => void
+  updateValues: (key: keyof VehicleType, field: string, value: unknown) => void
 }
 export default function VehicleData({ vehicle, updateValues }: VehicleDataProps){
   const handleSelect = (key: string, value: SelectOptionProps) => { 
@@ -52,7 +53,7 @@ export default function VehicleData({ vehicle, updateValues }: VehicleDataProps)
         <Select  label='Câmbio' bordered options={[ { label: 'Manual', value: 'MT' }, { label: 'Automático', value: 'AT' } ]} selectValue={vehicle.gear_type} handleClick={(event) => handleSelect('gear_type', event)}/>
       </Row>
       <Row>
-        <Input value={formatMileage(vehicle.mileage)} label='Quilometragem' icon='analytics' onChange={(e) => updateValues('data', 'mileage', e.target.value)} />
+        <Input value={formatMileage(vehicle.mileage)} label='Quilometragem' onChange={(e) => updateValues('data', 'mileage', e.target.value)} />
         <Select  label='Cor' bordered options={[ { label: 'Prata', value: 'silver' } ]} selectValue={vehicle.color} handleClick={(event) => handleSelect('color', event)}/>
       </Row>
     </Section>

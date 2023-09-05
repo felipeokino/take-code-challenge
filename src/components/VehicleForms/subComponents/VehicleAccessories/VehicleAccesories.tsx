@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { VehicleType } from '../../../../pages/AddVehicle/mockVehicleData';
 import { SelectOptionProps } from '../../../../types/types.common';
 import { Chips } from '../../../Chips';
 import Section from '../Section';
@@ -11,7 +12,7 @@ type VehicleAccessoriesProps = {
   accessories: {
     chips: SelectOptionProps[]
   }
-  updateValues: (key: string, field: string, value: unknown) => void
+  updateValues: (key: keyof VehicleType, field: string, value: unknown) => void
 }
 export default function VehicleAccessories({ accessories:{ chips }, updateValues }: VehicleAccessoriesProps) {
   const [ options, setOptions ] = useState(accessories);

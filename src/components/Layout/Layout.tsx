@@ -3,6 +3,7 @@ import { matchPath, useLocation } from 'react-router-dom';
 
 import { icons } from '../../utils/icons';
 import Header from '../Header';
+import Icon from '../Icon';
 import { SideBar } from '../Sidebar';
 
 import { CollapseSideBar, PageContent } from './Layout.styles';
@@ -32,7 +33,7 @@ export default function Layout({ children }: LayoutProps){
           ))
         }
         <CollapseSideBar isOpen={isOpen} onClick={handleCollapse}>
-          <img src={icons.arrowcollapse} alt="" />
+          <Icon icon='collapse' isButton={false}/>
         </CollapseSideBar>
       </SideBar.Root>
       <PageContent isOpen={isOpen}>
